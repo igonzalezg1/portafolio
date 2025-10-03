@@ -5,6 +5,7 @@ import AbautComponent from './components/AbautComponent.vue'
 import CertificationsComponent from './components/CertificationsComponent.vue'
 import HabilitiesComponent from './components/HabilitiesComponent.vue'
 import ExperienceComponent from './components/ExperienceComponent.vue'
+import CarrouselComponent from './components/CarrouselComponent.vue'
 </script>
 
 <template>
@@ -29,6 +30,9 @@ import ExperienceComponent from './components/ExperienceComponent.vue'
 
     <!-- Sección de experiencia -->
     <ExperienceComponent />
+
+    <!-- Sección de proyectos -->
+    <CarrouselComponent />
   </section>
 </template>
 
