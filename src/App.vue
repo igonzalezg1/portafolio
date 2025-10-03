@@ -4,6 +4,7 @@ import ContactsComponent from './components/ContactsComponent.vue'
 import AbautComponent from './components/AbautComponent.vue'
 import CertificationsComponent from './components/CertificationsComponent.vue'
 import HabilitiesComponent from './components/HabilitiesComponent.vue'
+import ExperienceComponent from './components/ExperienceComponent.vue'
 </script>
 
 <template>
@@ -25,6 +26,9 @@ import HabilitiesComponent from './components/HabilitiesComponent.vue'
 
     <!-- Sección de habilidades -->
     <HabilitiesComponent />
+
+    <!-- Sección de experiencia -->
+    <ExperienceComponent />
   </section>
 </template>
 
