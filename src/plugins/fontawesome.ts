@@ -2,13 +2,14 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-// Iconos sólidos
-import { faUser, faHome, faEnvelope } from '@fortawesome/free-solid-svg-icons'
-// Iconos de marcas
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+// Iconos sólidos (fas)
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
+
+// Iconos de marcas (fab)
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 // Agregar iconos a la librería
-library.add(faUser, faHome, faEnvelope, faGithub, faLinkedin)
+library.add(faEnvelope, faPhone, faLinkedin)
 
-// Exportar para poder registrarlo
-export { FontAwesomeIcon }
+// Exportar componente
+export default FontAwesomeIcon
