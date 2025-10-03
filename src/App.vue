@@ -3,6 +3,7 @@ import HomeComponent from './components/HomeComponent.vue'
 import ContactsComponent from './components/ContactsComponent.vue'
 import AbautComponent from './components/AbautComponent.vue'
 import CertificationsComponent from './components/CertificationsComponent.vue'
+import HabilitiesComponent from './components/HabilitiesComponent.vue'
 </script>
 
 <template>
@@ -21,6 +22,9 @@ import CertificationsComponent from './components/CertificationsComponent.vue'
 
     <!-- Sección de certificaciones -->
     <CertificationsComponent />
+
+    <!-- Sección de habilidades -->
+    <HabilitiesComponent />
   </section>
 </template>
 
