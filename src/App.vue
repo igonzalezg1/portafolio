@@ -6,6 +6,7 @@ import CertificationsComponent from './components/CertificationsComponent.vue'
 import HabilitiesComponent from './components/HabilitiesComponent.vue'
 import ExperienceComponent from './components/ExperienceComponent.vue'
 import CarrouselComponent from './components/CarrouselComponent.vue'
+import FooterComponent from './components/FooterComponent.vue'
 </script>
 
 <template>
@@ -34,6 +35,7 @@ import CarrouselComponent from './components/CarrouselComponent.vue'
     <!-- Sección de proyectos -->
     <CarrouselComponent />
   </section>
+  <FooterComponent />
 </template>
 
 <style scoped></style>
