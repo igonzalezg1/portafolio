@@ -88,7 +88,7 @@ const handleEmailClick = () => {
           @click="handleContactClick"
           class="group px-8 py-4 bg-gray-900 text-white rounded-full flex items-center gap-2 hover:gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105 font-medium"
         >
-          Hablemos
+          Contactame
         </button>
 
         <button

@@ -3,7 +3,7 @@
 <template>
   <section
     id="contacto"
-    class="w-full flex flex-col items-center justify-center py-16 bg-white/30 rounded-xl shadow-xl p-8 relative"
+    class="w-full flex flex-col items-center justify-center py-16 bg-white/30 rounded-xl shadow-md p-8 relative"
   >
     <!-- Card -->
     <div class="flex gap-16 mb-20">
@@ -13,7 +13,7 @@
         target="_blank"
         class="text-blue-700 hover:text-blue-500 transition-transform transform hover:scale-125"
       >
-        <font-awesome-icon :icon="['fab', 'linkedin']" class="w-20 h-20 md:w-28 md:h-28" />
+        <font-awesome-icon :icon="['fab', 'linkedin']" class="text-4xl" />
       </a>
 
       <!-- Email -->
@@ -21,7 +21,7 @@
         href="mailto:gonzalezgarciaivandejesus@gmail.com"
         class="text-red-600 hover:text-red-400 transition-transform transform hover:scale-125"
       >
-        <font-awesome-icon :icon="['fas', 'envelope']" class="w-20 h-20 md:w-28 md:h-28" />
+        <font-awesome-icon :icon="['fas', 'envelope']" class="text-4xl" />
       </a>
 
       <!-- Teléfono -->
@@ -29,7 +29,7 @@
         href="tel:+527291097554"
         class="text-green-600 hover:text-green-400 transition-transform transform hover:scale-125"
       >
-        <font-awesome-icon :icon="['fas', 'phone']" class="w-20 h-20 md:w-28 md:h-28" />
+        <font-awesome-icon :icon="['fas', 'phone']" class="text-4xl" />
       </a>
     </div>
 
