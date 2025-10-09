@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import visaElectronica from '@/assets/img/visaelectronica.png'
+import sellerCenter from '@/assets/img/sellercenter.png'
+import sipf from '@/assets/img/sipf.png'
+import sumapp from '@/assets/img/sumapp.png'
 
 interface Project {
   id: number
@@ -12,25 +16,25 @@ const projects = ref<Project[]>([
   {
     id: 4,
     name: 'Visa Electrónica',
-    image: '/src/assets/img/visaelectronica.png',
+    image: visaElectronica,
     description: 'Sistema de visado electrónico SRE',
   },
   {
     id: 2,
     name: 'SIPF',
-    image: '/src/assets/img/sipf.png',
+    image: sipf,
     description: 'Sistema Penitenciario Federal',
   },
   {
     id: 1,
     name: 'Seller Center',
-    image: '/src/assets/img/sellercenter.png',
+    image: sellerCenter,
     description: 'Plataforma de gestión para vendedores',
   },
   {
     id: 3,
     name: 'Sumapp',
-    image: '/src/assets/img/sumapp.png',
+    image: sumapp,
     description: 'Aplicación de gestión empresarial',
   },
 ])
