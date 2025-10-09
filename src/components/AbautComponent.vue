@@ -7,7 +7,7 @@
       Ingeniero en Tecnologías de la Información especializado en desarrollo full-stack y
       arquitecturas de microservicios. <br />
       He liderado proyectos de alto impacto como el Sistema de Visa Electrónica para la Secretaría
-      de Relaciones Exteriores y sistemas penitenciarios federales. <br />
+      de Relaciones Exteriores y Sistemas Penitenciarios Federales. <br />
       Apasionado por crear soluciones escalables, limpias y mantenibles usando las mejores prácticas
       del sector.
     </p>
