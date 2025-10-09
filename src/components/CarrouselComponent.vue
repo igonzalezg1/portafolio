@@ -75,7 +75,7 @@ onUnmounted(() => {
 
 <template>
   <section
-    class="w-full flex flex-col items-center justify-center py-16 bg-white/50 shadow-md rounded-xl p-8 mb-8"
+    class="w-full flex flex-col items-center justify-center py-16 bg-white/70 shadow-md rounded-xl p-8 mb-8"
   >
     <!-- Título centrado -->
     <h2 class="text-3xl font-bold mb-6 text-center">Proyectos creados</h2>

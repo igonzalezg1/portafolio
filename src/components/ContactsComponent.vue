@@ -3,7 +3,7 @@
 <template>
   <section
     id="contacto"
-    class="w-full flex flex-col items-center justify-center py-16 bg-white/30 rounded-xl shadow-md p-8 relative"
+    class="w-full flex flex-col items-center justify-center py-16 bg-white/70 rounded-xl shadow-md p-8 relative"
   >
     <!-- Card -->
     <div class="flex gap-16 mb-20">

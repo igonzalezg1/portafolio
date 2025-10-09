@@ -4,7 +4,7 @@ import { faTrophy } from '@fortawesome/free-solid-svg-icons'
 
 <template>
   <section
-    class="w-full flex flex-col items-center justify-center py-16 bg-white/50 shadow-md rounded-xl p-8 mb-8"
+    class="w-full flex flex-col items-center justify-center py-16 bg-white/70 shadow-md rounded-xl p-8 mb-8"
   >
     <!-- Icono centrado arriba -->
     <div class="flex justify-center mb-4">
