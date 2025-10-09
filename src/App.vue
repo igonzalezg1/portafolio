@@ -24,6 +24,9 @@ const sectionsVisible = ref({
 const mousePosition = ref({ x: 0, y: 0 })
 const cursorGlow = ref<HTMLElement | null>(null)
 
+// Estado del botón de scroll to top
+const showScrollButton = ref(false)
+
 // Función para actualizar la posición del mouse
 const handleMouseMove = (event: MouseEvent) => {
   mousePosition.value = {
@@ -36,24 +39,42 @@ const handleMouseMove = (event: MouseEvent) => {
   }
 }
 
+// Función para detectar scroll y mostrar botón
+const handleScroll = () => {
+  showScrollButton.value = window.scrollY > 500
+}
+
+// Función para scroll suave hacia arriba
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  })
+}
+
 onMounted(() => {
   // Mostrar el home inmediatamente
   sectionsVisible.value.home = true
 
-  // Configurar el Intersection Observer
+  // Configurar el Intersection Observer con capacidad de reiniciar animaciones
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const section = entry.target.getAttribute('data-section')
-          if (section && sectionsVisible.value.hasOwnProperty(section)) {
+        const section = entry.target.getAttribute('data-section')
+        if (section && sectionsVisible.value.hasOwnProperty(section)) {
+          // Si entra en vista, mostrar animación
+          if (entry.isIntersecting) {
             sectionsVisible.value[section as keyof typeof sectionsVisible.value] = true
+          }
+          // Si sale completamente de la vista, resetear para reanimar
+          else if (entry.intersectionRatio === 0) {
+            sectionsVisible.value[section as keyof typeof sectionsVisible.value] = false
           }
         }
       })
     },
     {
-      threshold: 0.1,
+      threshold: [0, 0.1], // Detecta cuando entra y cuando sale completamente
       rootMargin: '0px 0px -100px 0px',
     },
   )
@@ -63,12 +84,14 @@ onMounted(() => {
     observer.observe(section)
   })
 
-  // Agregar listener para el mouse
+  // Agregar listeners
   window.addEventListener('mousemove', handleMouseMove)
+  window.addEventListener('scroll', handleScroll)
 })
 
 onUnmounted(() => {
   window.removeEventListener('mousemove', handleMouseMove)
+  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 
@@ -127,6 +150,31 @@ onUnmounted(() => {
       class="fixed top-1/2 right-1/4 w-80 h-80 bg-cyan-400/10 rounded-full blur-3xl -z-10 animate-pulse-slow"
       style="animation-delay: 2s"
     ></div>
+
+    <!-- Botón Scroll to Top -->
+    <Transition name="fade-scale">
+      <button
+        v-if="showScrollButton"
+        @click="scrollToTop"
+        class="fixed bottom-8 right-8 z-50 bg-white hover:bg-blue-500 text-gray-800 hover:text-white p-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 group border-2 border-gray-200 hover:border-blue-500"
+        aria-label="Volver arriba"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 transition-transform group-hover:-translate-y-1"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 10l7-7m0 0l7 7m-7-7v18"
+          />
+        </svg>
+      </button>
+    </Transition>
 
     <section class="min-h-screen flex flex-col px-6 py-16 relative z-0">
       <div
@@ -373,5 +421,21 @@ onUnmounted(() => {
     transform: translate(-100px, 50px) scale(1.1);
     opacity: 0.5;
   }
+}
+
+/* Transiciones para el botón scroll to top */
+.fade-scale-enter-active,
+.fade-scale-leave-active {
+  transition: all 0.3s ease;
+}
+
+.fade-scale-enter-from {
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+}
+
+.fade-scale-leave-to {
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
 }
 </style>
