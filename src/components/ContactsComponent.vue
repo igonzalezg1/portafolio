@@ -9,7 +9,7 @@
     <div class="flex gap-16 mb-20">
       <!-- LinkedIn -->
       <a
-        href="https://www.linkedin.com/in/gonzalezivan2000"
+        href="https://www.linkedin.com/in/gonzalezgivan2000"
         target="_blank"
         class="text-blue-700 hover:text-blue-500 transition-transform transform hover:scale-125"
       >

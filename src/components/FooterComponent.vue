@@ -60,7 +60,7 @@ const handleContactClick = (contact: ContactInfo) => {
 
         <!-- LinkedIn Card -->
         <a
-          href="https://www.linkedin.com/in/gonzalezivan2000"
+          href="https://www.linkedin.com/in/gonzalezgivan2000"
           target="_blank"
           rel="noopener noreferrer"
           class="bg-slate-800/50 backdrop-blur rounded-2xl p-8 border border-slate-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-1 cursor-pointer group"

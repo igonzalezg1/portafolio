@@ -251,10 +251,7 @@ onUnmounted(() => {
       </div>
     </section>
 
-    <div
-      class="transition-all duration-1000 ease-out relative z-0"
-      :class="sectionsVisible.carrousel ? 'opacity-100' : 'opacity-0'"
-    >
+    <div class="relative z-0">
       <FooterComponent />
     </div>
   </div>
