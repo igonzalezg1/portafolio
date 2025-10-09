@@ -3,33 +3,33 @@
 <template>
   <section
     id="contacto"
-    class="w-full flex flex-col items-center justify-center py-16 bg-white/70 rounded-xl shadow-md p-8 relative"
+    class="w-full max-w-7xl mx-auto flex flex-col items-center justify-center py-12 md:py-16 bg-white/70 rounded-xl shadow-md p-6 md:p-8 lg:p-12 relative min-h-[300px]"
   >
     <!-- Card -->
-    <div class="flex gap-16 mb-20">
+    <div class="flex flex-wrap gap-8 md:gap-12 lg:gap-16 mb-20 justify-center">
       <!-- LinkedIn -->
       <a
-        href="https://www.linkedin.com/in/gonzalezgivan2000"
+        href="https://www.linkedin.com/in/gonzalezivan2000"
         target="_blank"
-        class="text-blue-700 hover:text-blue-500 transition-transform transform hover:scale-125"
+        class="text-blue-700 hover:text-blue-500 transition-all duration-300 transform hover:scale-125"
       >
-        <font-awesome-icon :icon="['fab', 'linkedin']" class="text-4xl" />
+        <font-awesome-icon :icon="['fab', 'linkedin']" class="text-3xl md:text-4xl lg:text-5xl" />
       </a>
 
       <!-- Email -->
       <a
         href="mailto:gonzalezgarciaivandejesus@gmail.com"
-        class="text-red-600 hover:text-red-400 transition-transform transform hover:scale-125"
+        class="text-red-600 hover:text-red-400 transition-all duration-300 transform hover:scale-125"
       >
-        <font-awesome-icon :icon="['fas', 'envelope']" class="text-4xl" />
+        <font-awesome-icon :icon="['fas', 'envelope']" class="text-3xl md:text-4xl lg:text-5xl" />
       </a>
 
       <!-- Teléfono -->
       <a
         href="tel:+527291097554"
-        class="text-green-600 hover:text-green-400 transition-transform transform hover:scale-125"
+        class="text-green-600 hover:text-green-400 transition-all duration-300 transform hover:scale-125"
       >
-        <font-awesome-icon :icon="['fas', 'phone']" class="text-4xl" />
+        <font-awesome-icon :icon="['fas', 'phone']" class="text-3xl md:text-4xl lg:text-5xl" />
       </a>
     </div>
 

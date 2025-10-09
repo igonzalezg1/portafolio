@@ -2,7 +2,7 @@
 
 <template>
   <section class="p-6 bg-white/50">
-    <h2 class="text-5xl font-bold mb-8 text-center">Habilidades</h2>
+    <h2 class="text-5xl font-bold mb-8 text-center">Skills tecnológicos</h2>
 
     <!-- Cards principales (2 columnas desktop, 1 columna mobile) -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
