@@ -1,112 +1,59 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section
-    id="contacto"
-    class="w-full max-w-7xl mx-auto flex flex-col items-center justify-center py-12 md:py-16 bg-white/70 rounded-xl shadow-md p-6 md:p-8 lg:p-12 relative min-h-[300px]"
-  >
-    <!-- Card -->
-    <div class="flex flex-wrap gap-8 md:gap-12 lg:gap-16 mb-20 justify-center">
-      <!-- LinkedIn -->
-      <a
-        href="https://www.linkedin.com/in/gonzalezgivan2000"
-        target="_blank"
-        class="text-blue-700 hover:text-blue-500 transition-all duration-300 transform hover:scale-125"
-      >
-        <font-awesome-icon :icon="['fab', 'linkedin']" class="text-3xl md:text-4xl lg:text-5xl" />
+  <section id="contacto" class="contact-bar">
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/gonzalezgivan2000" target="_blank" class="contact-link">
+        <font-awesome-icon :icon="['fab', 'linkedin']" class="contact-icon" />
+        <span>LinkedIn</span>
       </a>
 
-      <!-- Email -->
-      <a
-        href="mailto:gonzalezgarciaivandejesus@gmail.com"
-        class="text-red-600 hover:text-red-400 transition-all duration-300 transform hover:scale-125"
-      >
-        <font-awesome-icon :icon="['fas', 'envelope']" class="text-3xl md:text-4xl lg:text-5xl" />
+      <a href="mailto:gonzalezgarciaivandejesus@gmail.com" class="contact-link">
+        <font-awesome-icon :icon="['fas', 'envelope']" class="contact-icon" />
+        <span>gonzalezgarciaivandejesus@gmail.com</span>
       </a>
 
-      <!-- Teléfono -->
-      <a
-        href="tel:+527291097554"
-        class="text-green-600 hover:text-green-400 transition-all duration-300 transform hover:scale-125"
-      >
-        <font-awesome-icon :icon="['fas', 'phone']" class="text-3xl md:text-4xl lg:text-5xl" />
+      <a href="tel:+527291097554" class="contact-link">
+        <font-awesome-icon :icon="['fas', 'phone']" class="contact-icon" />
+        <span>+52 729-109-7554</span>
       </a>
-    </div>
-
-    <!-- Mouse animado mejorado -->
-    <div class="absolute bottom-8 flex flex-col items-center gap-3">
-      <!-- Mouse -->
-      <div class="relative">
-        <!-- Cuerpo del mouse -->
-        <div
-          class="w-7 h-11 border-2 border-gray-800 rounded-full flex justify-center pt-2 bg-white/50 backdrop-blur-sm shadow-lg"
-        >
-          <!-- Rueda del mouse animada -->
-          <div class="w-1 h-3 bg-gray-800 rounded-full animate-scroll"></div>
-        </div>
-
-        <!-- Línea divisoria del mouse (botones) -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-4 bg-gray-800/30"></div>
-      </div>
-
-      <!-- Texto -->
-      <div class="flex flex-col items-center gap-1">
-        <p class="text-xs text-gray-600 font-medium tracking-wider uppercase animate-pulse">
-          Scrollea para continuar
-        </p>
-        <!-- Flecha hacia abajo -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4 text-gray-600 animate-bounce"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
-        </svg>
-      </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-/* Animación personalizada para la rueda del mouse */
-@keyframes scroll {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 0.5;
-    transform: translateY(8px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.contact-bar {
+  padding: 0.875rem 0;
+  border-bottom: 1px solid #dde1e6;
 }
 
-.animate-scroll {
-  animation: scroll 2s ease-in-out infinite;
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
 }
 
-/* Ajuste del bounce para la flecha */
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(5px);
-  }
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: #42526e;
+  text-decoration: none;
+  font-size: 0.8125rem;
+  transition: color 0.15s;
 }
 
-.animate-bounce {
-  animation: bounce 2s ease-in-out infinite;
+.contact-link:hover {
+  color: #0052cc;
+}
+
+.contact-icon {
+  font-size: 0.875rem;
+  color: #6b778c;
+}
+
+.contact-link:hover .contact-icon {
+  color: #0052cc;
 }
 </style>

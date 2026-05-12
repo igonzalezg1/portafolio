@@ -47,18 +47,18 @@ const nextSlide = () => {
 }
 
 const prevSlide = () => {
-  currentIndex.value = currentIndex.value === 0 ? projects.value.length - 1 : currentIndex.value - 1
+  currentIndex.value =
+    currentIndex.value === 0 ? projects.value.length - 1 : currentIndex.value - 1
 }
 
 const goToSlide = (index: number) => {
   currentIndex.value = index
-  console.log(`Proyecto seleccionado: ${projects.value[index]?.name}`)
 }
 
 const startAutoplay = () => {
   intervalId = window.setInterval(() => {
     nextSlide()
-  }, 4000) // Cambia cada 4 segundos
+  }, 4000)
 }
 
 const stopAutoplay = () => {
@@ -78,85 +78,58 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section
-    class="w-full flex flex-col items-center justify-center py-16 bg-white/70 shadow-md rounded-xl p-8 mb-8"
-  >
-    <!-- Título centrado -->
-    <h2 class="text-3xl font-bold mb-6 text-center">Proyectos creados</h2>
-    <p class="text-gray-600 text-center mb-12 max-w-2xl">
-      Aquí puedes ver algunos de los proyectos más destacados en los que he trabajado en las últimas
-      empresas donde he estado (algunos desarrollados por mi desde 0).
-    </p>
+  <section class="carousel-section">
+    <div class="carousel-header">
+      <h2 class="section-heading">Proyectos creados</h2>
+      <p class="carousel-subtitle">
+        Algunos de los proyectos más destacados en los que he trabajado en las últimas empresas donde
+        he estado (algunos desarrollados por mí desde 0).
+      </p>
+    </div>
 
-    <!-- Carrusel -->
     <div
-      class="relative w-full max-w-5xl mx-auto"
+      class="carousel-wrapper"
       @mouseenter="stopAutoplay"
       @mouseleave="startAutoplay"
     >
       <!-- Slides Container -->
-      <div class="relative overflow-hidden rounded-2xl bg-gray-100 shadow-xl">
+      <div class="carousel-track-outer">
         <div
-          class="flex transition-transform duration-700 ease-in-out"
+          class="carousel-track"
           :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
         >
-          <div
-            v-for="project in projects"
-            :key="project.id"
-            class="min-w-full flex flex-col items-center justify-center p-8 md:p-12"
-          >
-            <!-- Imagen -->
-            <div class="w-full max-w-3xl mb-6 rounded-xl overflow-hidden shadow-2xl">
-              <img
-                :src="project.image"
-                :alt="project.name"
-                class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-              />
+          <div v-for="project in projects" :key="project.id" class="carousel-slide">
+            <div class="slide-img-wrapper">
+              <img :src="project.image" :alt="project.name" class="slide-img" />
             </div>
-
-            <!-- Info del proyecto -->
-            <div class="text-center">
-              <h3 class="text-2xl font-bold text-gray-900 mb-2">
-                {{ project.name }}
-              </h3>
-              <p class="text-gray-600">
-                {{ project.description }}
-              </p>
+            <div class="slide-info">
+              <span class="slide-index"
+                >{{ projects.indexOf(project) + 1 }} / {{ projects.length }}</span
+              >
+              <h3 class="slide-name">{{ project.name }}</h3>
+              <p class="slide-desc">{{ project.description }}</p>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Botones de navegación -->
-      <button
-        @click="prevSlide"
-        class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-10"
-        aria-label="Anterior"
-      >
+      <button @click="prevSlide" class="nav-btn nav-btn--prev" aria-label="Anterior">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
+          class="nav-icon"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M15 19l-7-7 7-7"
-          />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
       </button>
 
-      <button
-        @click="nextSlide"
-        class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-10"
-        aria-label="Siguiente"
-      >
+      <button @click="nextSlide" class="nav-btn nav-btn--next" aria-label="Siguiente">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
+          class="nav-icon"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -164,30 +137,176 @@ onUnmounted(() => {
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       </button>
+    </div>
 
-      <!-- Indicadores (dots) -->
-      <div class="flex justify-center gap-2 mt-8">
-        <button
-          v-for="(project, index) in projects"
-          :key="index"
-          @click="goToSlide(index)"
-          :class="[
-            'transition-all duration-300 rounded-full',
-            currentIndex === index
-              ? 'w-12 h-3 bg-blue-500'
-              : 'w-3 h-3 bg-gray-300 hover:bg-gray-400',
-          ]"
-          :aria-label="`Ir al proyecto ${index + 1}`"
-        />
-      </div>
+    <!-- Indicadores -->
+    <div class="carousel-indicators">
+      <button
+        v-for="(project, index) in projects"
+        :key="index"
+        @click="goToSlide(index)"
+        :class="['indicator', currentIndex === index ? 'indicator--active' : '']"
+        :aria-label="`Ir al proyecto ${index + 1}`"
+      />
     </div>
   </section>
 </template>
 
 <style scoped>
-/* Animación suave para las imágenes */
-img {
+.carousel-section {
+  padding: 2rem 0 2.5rem;
+}
+
+.carousel-header {
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #dde1e6;
+  padding-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.section-heading {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #0052cc;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.carousel-subtitle {
+  font-size: 0.8125rem;
+  color: #6b778c;
+  margin: 0;
+  max-width: 60ch;
+}
+
+.carousel-wrapper {
+  position: relative;
+  border: 1px solid #dde1e6;
+  background: #ffffff;
+}
+
+.carousel-track-outer {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  gap: 1rem;
+}
+
+.slide-img-wrapper {
+  width: 100%;
+  max-width: 720px;
+  border: 1px solid #dde1e6;
+  overflow: hidden;
+}
+
+.slide-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
+}
+
+.slide-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.slide-index {
+  font-size: 0.6875rem;
+  font-family: 'Courier New', monospace;
+  color: #6b778c;
+  letter-spacing: 0.05em;
+}
+
+.slide-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #172b4d;
+  margin: 0;
+}
+
+.slide-desc {
+  font-size: 0.8125rem;
+  color: #42526e;
+  margin: 0;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  border: 1px solid #dde1e6;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  z-index: 10;
+}
+
+.nav-btn:hover {
+  background: #f4f5f7;
+  border-color: #b3b9c4;
+}
+
+.nav-btn--prev {
+  left: 12px;
+}
+
+.nav-btn--next {
+  right: 12px;
+}
+
+.nav-icon {
+  width: 16px;
+  height: 16px;
+  color: #172b4d;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.375rem;
+  margin-top: 0.875rem;
+}
+
+.indicator {
+  width: 24px;
+  height: 3px;
+  background: #dde1e6;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  padding: 0;
+}
+
+.indicator--active {
+  background: #0052cc;
+  width: 40px;
+}
+
+.indicator:hover:not(.indicator--active) {
+  background: #b3b9c4;
 }
 </style>

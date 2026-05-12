@@ -1,9 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="w-full max-w-6xl mx-auto p-6 md:p-8 lg:p-12">
-    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Sobre mí</h2>
-    <p class="text-gray-700 leading-relaxed text-lg md:text-xl lg:text-2xl text-justify">
+  <div class="about-section">
+    <h2 class="section-label">Sobre mí</h2>
+    <p class="about-text">
       Ingeniero en Tecnologías de la Información especializado en desarrollo full-stack y
       arquitecturas de microservicios. <br /><br />
       He liderado proyectos de alto impacto como el Sistema de Visa Electrónica para la Secretaría
@@ -14,4 +14,30 @@
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.about-section {
+  padding: 1.75rem 0 1.75rem 1.25rem;
+  border-left: 3px solid #0052cc;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.section-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #0052cc;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.about-text {
+  color: #42526e;
+  line-height: 1.7;
+  font-size: 0.9375rem;
+  margin: 0;
+  max-width: 72ch;
+}
+</style>

@@ -70,7 +70,7 @@ const experiences: Experience[] = [
     company: 'Empresa Virtual',
     position: 'Desarrollador Jr.',
     description:
-      'Creación de dashboards de alta disponibilidad para reportes de prevención y mantenimiento. Desarrollo y soporte de la aplicación “Sumapp”, contribuyendo a su integración con sistemas externos.',
+      'Creación de dashboards de alta disponibilidad para reportes de prevención y mantenimiento. Desarrollo y soporte de la aplicación "Sumapp", contribuyendo a su integración con sistemas externos.',
     technologies: [
       'VueJS',
       'JavaScript',
@@ -87,36 +87,19 @@ const experiences: Experience[] = [
 </script>
 
 <template>
-  <section class="p-6 bg-white/50">
-    <h2 class="text-5xl font-bold mb-8 text-center">Principal experiencia Laboral</h2>
+  <section class="exp-section">
+    <h2 class="section-heading">Experiencia Laboral</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div
-        v-for="(exp, index) in experiences"
-        :key="index"
-        class="border-l-4 border-blue-500 bg-white rounded-lg shadow-md p-6 flex flex-col"
-      >
-        <!-- Año y empresa -->
-        <div class="flex items-center mb-2">
-          <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-sm font-medium mr-3">
-            {{ exp.year }}
-          </span>
-          <h3 class="text-lg font-semibold text-gray-700">{{ exp.company }}</h3>
+    <div class="exp-grid">
+      <div v-for="(exp, index) in experiences" :key="index" class="exp-card">
+        <div class="exp-meta">
+          <span class="exp-year">{{ exp.year }}</span>
+          <span class="exp-company">{{ exp.company }}</span>
         </div>
-
-        <!-- Puesto -->
-        <h4 class="text-blue-600 font-semibold mb-2">{{ exp.position }}</h4>
-
-        <!-- Descripción -->
-        <p class="text-gray-600 mb-4">{{ exp.description }}</p>
-
-        <!-- Tecnologías -->
-        <div class="flex flex-wrap gap-2 mt-auto">
-          <span
-            v-for="(tech, idx) in exp.technologies"
-            :key="idx"
-            class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
-          >
+        <h3 class="exp-position">{{ exp.position }}</h3>
+        <p class="exp-description">{{ exp.description }}</p>
+        <div class="exp-tags">
+          <span v-for="(tech, idx) in exp.technologies" :key="idx" class="exp-tag">
             {{ tech }}
           </span>
         </div>
@@ -126,9 +109,95 @@ const experiences: Experience[] = [
 </template>
 
 <style scoped>
-/* Opcional: Hover effect para cada card */
-div[v-for]:hover {
-  transform: translateY(-2px);
-  transition: all 0.2s ease-in-out;
+.exp-section {
+  padding: 2rem 0;
+}
+
+.section-heading {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #0052cc;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #dde1e6;
+}
+
+.exp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: #dde1e6;
+  border: 1px solid #dde1e6;
+}
+
+@media (min-width: 768px) {
+  .exp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.exp-card {
+  background: #ffffff;
+  padding: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-left: 3px solid #0052cc;
+}
+
+.exp-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.exp-year {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #0052cc;
+  background: #deebff;
+  padding: 0.1rem 0.5rem;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
+}
+
+.exp-company {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #172b4d;
+}
+
+.exp-position {
+  font-size: 0.8125rem;
+  color: #0052cc;
+  font-weight: 500;
+  margin: 0;
+}
+
+.exp-description {
+  font-size: 0.8125rem;
+  color: #42526e;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  padding-top: 0.625rem;
+  border-top: 1px solid #f4f5f7;
+  margin-top: auto;
+}
+
+.exp-tag {
+  font-size: 0.6875rem;
+  color: #172b4d;
+  background: #ebecf0;
+  padding: 0.1rem 0.5rem;
+  font-family: 'Courier New', monospace;
 }
 </style>

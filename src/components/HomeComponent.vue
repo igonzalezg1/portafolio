@@ -48,82 +48,190 @@ const handleEmailClick = () => {
 </script>
 
 <template>
-  <div
-    class="max-w-6xl w-full flex flex-col md:flex-row items-center md:items-start md:justify-between gap-8"
-  >
+  <div class="home-layout">
     <!-- Texto -->
-    <div class="flex-1 space-y-6 animate-fade-in">
-      <div class="flex items-center gap-3 mb-2">
-        <div class="w-16 h-1 bg-blue-500 rounded-full" />
-        <span class="text-sm font-mono text-gray-500 tracking-wider uppercase">
-          Full-Stack Developer
-        </span>
+    <div class="home-text">
+      <div class="role-label">
+        <span class="role-line"></span>
+        <span class="role-text">Full-Stack Developer</span>
       </div>
 
-      <h1 class="text-6xl md:text-8xl font-bold tracking-tight text-gray-900 leading-none">
-        Iván González
-      </h1>
+      <h1 class="home-title">Iván González</h1>
 
-      <p class="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed">
+      <p class="home-subtitle">
         Construyo experiencias web escalables y de alto rendimiento con 4+ años de experiencia
       </p>
 
       <!-- Stats -->
-      <div class="flex flex-wrap gap-12 pt-6">
-        <div v-for="(stat, index) in stats" :key="index" class="group">
-          <div
-            class="text-4xl md:text-5xl font-bold text-blue-500 mb-1 transition-transform group-hover:scale-110"
-          >
-            {{ animatedStats[index] }}
-          </div>
-          <div class="text-sm md:text-base text-gray-600">
-            {{ stat.label }}
-          </div>
+      <div class="stats-row">
+        <div v-for="(stat, index) in stats" :key="index" class="stat-item">
+          <div class="stat-value">{{ animatedStats[index] }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
         </div>
       </div>
 
       <!-- CTA Buttons -->
-      <div class="flex flex-wrap gap-4 pt-8">
-        <button
-          @click="handleContactClick"
-          class="group px-8 py-4 bg-gray-900 text-white rounded-full flex items-center gap-2 hover:gap-4 transition-all duration-300 hover:shadow-2xl hover:scale-105 font-medium"
-        >
-          Contactame
-        </button>
-
-        <button
-          @click="handleEmailClick"
-          class="px-8 py-4 border-2 border-gray-900 text-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 font-medium hover:scale-105"
-        >
-          Email
-        </button>
+      <div class="cta-row">
+        <button @click="handleContactClick" class="btn-primary">Contáctame</button>
+        <button @click="handleEmailClick" class="btn-secondary">Email</button>
       </div>
     </div>
 
-    <!-- Imagen como avatar -->
-    <div class="flex-shrink-0">
-      <img
-        :src="Principal"
-        alt="Iván González"
-        class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-blue-500 shadow-lg"
-      />
+    <!-- Imagen -->
+    <div class="home-avatar">
+      <img :src="Principal" alt="Iván González" class="avatar-img" />
     </div>
   </div>
 </template>
 
 <style scoped>
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+.home-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem 0 2rem;
+}
+
+@media (min-width: 768px) {
+  .home-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
   }
 }
 
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out;
+.home-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+}
+
+.role-label {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.role-line {
+  display: block;
+  width: 2rem;
+  height: 2px;
+  background: #0052cc;
+}
+
+.role-text {
+  font-size: 0.6875rem;
+  font-family: 'Courier New', monospace;
+  color: #6b778c;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.home-title {
+  font-size: clamp(2.25rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #172b4d;
+  line-height: 1;
+  margin: 0;
+}
+
+.home-subtitle {
+  font-size: 1rem;
+  color: #42526e;
+  max-width: 40rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #dde1e6;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0052cc;
+  line-height: 1.1;
+  font-family: 'Courier New', monospace;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #6b778c;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn-primary {
+  padding: 0.5rem 1.25rem;
+  background: #0052cc;
+  color: #ffffff;
+  border: 1px solid #0052cc;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-radius: 2px;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary:hover {
+  background: #0747a6;
+  border-color: #0747a6;
+}
+
+.btn-secondary {
+  padding: 0.5rem 1.25rem;
+  background: transparent;
+  color: #0052cc;
+  border: 1px solid #0052cc;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-radius: 2px;
+  letter-spacing: 0.01em;
+}
+
+.btn-secondary:hover {
+  background: #deebff;
+}
+
+.home-avatar {
+  flex-shrink: 0;
+}
+
+.avatar-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border: 1px solid #dde1e6;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .avatar-img {
+    width: 180px;
+    height: 180px;
+  }
 }
 </style>
