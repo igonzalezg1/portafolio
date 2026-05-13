@@ -32,6 +32,7 @@ const mostrandoBienvenida = ref(true)
 // ─── Resize vertical ──────────────────────────────────────────────────────────
 
 function iniciarResize(e: MouseEvent | TouchEvent) {
+  if (window.innerWidth < 768) return
   const alturaInicial = props.altura
   const yInicial = e instanceof MouseEvent ? e.clientY : e.touches[0]!.clientY
 
@@ -406,14 +407,14 @@ function renderLineaBienvenida(linea: string): string {
 
 <style scoped>
 .terminal-pane {
-  --t-bg:      #f0ece3;
-  --t-border:  #cfc9c0;
-  --t-text:    #2a2420;
-  --t-muted:   #7a7060;
-  --t-prompt:  #9b2335;
-  --t-blue:    #1c4f7a;
-  --t-green:   #2d6e2d;
-  --t-error:   #9b2335;
+  --t-bg:      #1e2030;
+  --t-border:  #1a1b2e;
+  --t-text:    #c0caf5;
+  --t-muted:   #565f89;
+  --t-prompt:  #9ece6a;
+  --t-blue:    #7aa2f7;
+  --t-green:   #9ece6a;
+  --t-error:   #f7768e;
   --font:      'Menlo', 'Monaco', 'Cascadia Code', 'Courier New', monospace;
 
   display: flex;
@@ -435,17 +436,18 @@ function renderLineaBienvenida(linea: string): string {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #e8e4db;
+  background: #1a1b2e;
   border-bottom: 1px solid var(--t-border);
   transition: background 0.15s;
+  touch-action: none;
 }
 
-.t-resize-handle:hover { background: #cfc9c0; }
+.t-resize-handle:hover { background: #283457; }
 
 .handle-linea {
   width: 32px;
   height: 2px;
-  background: var(--t-border);
+  background: var(--t-muted);
   border-radius: 1px;
 }
 
@@ -457,7 +459,7 @@ function renderLineaBienvenida(linea: string): string {
   height: 26px;
   min-height: 26px;
   padding: 0 10px;
-  background: #e8e4db;
+  background: #1f2335;
   border-bottom: 1px solid var(--t-border);
   font-size: 10px;
 }
@@ -565,5 +567,14 @@ function renderLineaBienvenida(linea: string): string {
 @keyframes parpadeo {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
+}
+
+@media (max-width: 767px) {
+  .terminal-pane {
+    height: 200px !important;
+  }
+  .t-resize-handle {
+    cursor: default;
+  }
 }
 </style>

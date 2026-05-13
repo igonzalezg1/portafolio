@@ -37,17 +37,15 @@ onMounted(async () => {
   for (let i = 0; i < mensajes.length; i++) {
     await typeLinea(mensajes[i]!)
     progreso.value = Math.round(((i + 1) / mensajes.length) * 100)
-    await sleep(160)
+    await sleep(50)
   }
-  await sleep(300)
+  await sleep(100)
   terminado.value = true
-  await sleep(400)
+  await sleep(100)
   await typeLinea('> sistema listo.')
-  await sleep(200)
-  await typeLinea('> bienvenido, igonzalez.')
-  await sleep(200)
+  await sleep(100)
   await typeLinea('> abriendo editor de código...')
-  await sleep(700)
+  await sleep(300)
   saliendo.value = true
   await sleep(500)
   emit('listo')
@@ -64,15 +62,17 @@ onMounted(async () => {
  ██████╔╝██║   ██║██████╔╝   ██║   █████╗  ██║   ██║██║     ██║██║   ██║
  ██╔═══╝ ██║   ██║██╔══██╗   ██║   ██╔══╝  ██║   ██║██║     ██║██║   ██║
  ██║     ╚██████╔╝██║  ██║   ██║   ██║     ╚██████╔╝███████╗██║╚██████╔╝
- ╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝</pre>
+ ╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝</pre
+      >
 
-      <p class="subtitulo">portfolio_cli v2.0  —  igonzalez</p>
+      <p class="subtitulo">portfolio_cli v2.0 — igonzalez</p>
       <div class="separador">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
 
       <!-- Mensajes -->
       <div class="mensajes">
         <div v-for="(linea, i) in lineasMostradas" :key="i" class="linea">
-          {{ linea }}<span v-if="i === lineasMostradas.length - 1 && !terminado" class="cursor">█</span>
+          {{ linea
+          }}<span v-if="i === lineasMostradas.length - 1 && !terminado" class="cursor">█</span>
         </div>
       </div>
 
@@ -151,8 +151,13 @@ onMounted(async () => {
 }
 
 @keyframes parpadeo {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .progreso-wrap {
@@ -184,7 +189,12 @@ onMounted(async () => {
 }
 
 @media (max-width: 480px) {
-  .ascii-header { display: none; }
-  .subtitulo { font-size: 14px; color: #57e863; }
+  .ascii-header {
+    display: none;
+  }
+  .subtitulo {
+    font-size: 14px;
+    color: #57e863;
+  }
 }
 </style>

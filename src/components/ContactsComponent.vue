@@ -14,7 +14,7 @@
       </a>
 
       <a href="tel:+527291097554" class="contact-link">
-        <font-awesome-icon :icon="['fas', 'phone']" class="contact-icon" />
+        <font-awesome-icon :icon="['fas', 'phone']" class\="contact-icon" />
         <span>+52 729-109-7554</span>
       </a>
     </div>

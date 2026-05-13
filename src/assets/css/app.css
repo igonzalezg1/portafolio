@@ -14,12 +14,13 @@ body,
   height: 100%;
   width: 100%;
   overflow: hidden;
+  overscroll-behavior: none;
 }
 
 body {
   font-family: 'Menlo', 'Monaco', 'Cascadia Code', 'Courier New', monospace;
   -webkit-font-smoothing: antialiased;
-  background: #f5f2ec;
+  background: #24283b;
 }
 
 body,
