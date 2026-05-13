@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
+  <url>
+    <loc>https://www.ivangonzalezg.com.mx/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="es-MX"
+      href="https://www.ivangonzalezg.com.mx/"
+    />
+    <image:image>
+      <image:loc>https://www.ivangonzalezg.com.mx/og-image.png</image:loc>
+      <image:title>Iván González García — Desarrollador Full Stack México</image:title>
+      <image:caption>Portafolio profesional de Iván González García, Full Stack Engineer basado en Ciudad de México</image:caption>
+    </image:image>
+  </url>
+</urlset>

@@ -2,6 +2,7 @@ import visaElectronica from '@/assets/img/visaelectronica.png'
 import sellerCenter from '@/assets/img/sellercenter.png'
 import sipf from '@/assets/img/sipf.png'
 import sumapp from '@/assets/img/sumapp.png'
+import ivanInicio from '@/assets/img/ivan-inicio.png'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -38,6 +39,7 @@ export interface InicioData {
   nombre: string
   rol: string
   ubicacion: string
+  imagen?: string
   estadisticas: Array<{ valor: string; etiqueta: string }>
   proyectos: Array<{ nombre: string; descripcion: string }>
   abierto: string[]
@@ -118,6 +120,7 @@ export const archivos: Record<string, FileData> = {
       nombre: 'Iván González García',
       rol: 'full-stack engineer',
       ubicacion: 'Ciudad de México, México',
+      imagen: ivanInicio,
       estadisticas: [
         { valor: '4+', etiqueta: 'años de experiencia' },
         { valor: '10+', etiqueta: 'proyectos comprobables' },

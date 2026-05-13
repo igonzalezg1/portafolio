@@ -1,10 +1,277 @@
 <!doctype html>
-<html lang="">
+<html lang="es-MX">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/src/assets/img/icono-inicio.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio Ivan de Jesus</title>
+
+    <!-- ── Favicon ──────────────────────────────────────────────────────────── -->
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.ico" />
+
+    <!-- ── SEO Fundamental ──────────────────────────────────────────────────── -->
+    <title>Iván González García — Desarrollador Full Stack | México</title>
+    <meta name="description" content="Iván González García, Desarrollador Full Stack con 4+ años de experiencia en Laravel, Spring Boot, Vue.js, Docker y microservicios. Basado en Ciudad de México, disponible para proyectos y posiciones remotas." />
+    <meta name="keywords" content="desarrollador full stack México, programador backend CDMX, Laravel developer México, Spring Boot developer, Vue.js Angular developer, microservicios México, Docker Kubernetes, desarrollo web Ciudad de México, Iván González García, portafolio desarrollador web México, full stack engineer CDMX" />
+    <meta name="author" content="Iván González García" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href="https://www.ivangonzalezg.com.mx/" />
+
+    <!-- ── Geo / Local SEO ──────────────────────────────────────────────────── -->
+    <meta name="geo.region" content="MX-CMX" />
+    <meta name="geo.placename" content="Ciudad de México, México" />
+    <meta name="geo.position" content="19.432608;-99.133209" />
+    <meta name="ICBM" content="19.432608, -99.133209" />
+
+    <!-- ── Open Graph — LinkedIn, Facebook, WhatsApp, Slack ─────────────────── -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Iván González García — Desarrollador Full Stack México" />
+    <meta property="og:description" content="Full Stack Engineer con 4+ años construyendo sistemas empresariales y microservicios. Experto en Laravel, Spring Boot, Vue.js, Docker y Kubernetes. Ciudad de México." />
+    <meta property="og:url" content="https://www.ivangonzalezg.com.mx/" />
+    <meta property="og:site_name" content="Iván González García — Portafolio" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:image" content="https://www.ivangonzalezg.com.mx/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Iván González García — Desarrollador Full Stack · Ciudad de México" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="profile:first_name" content="Iván" />
+    <meta property="profile:last_name" content="González García" />
+
+    <!-- ── Twitter / X Card ─────────────────────────────────────────────────── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Iván González García — Full Stack Developer México" />
+    <meta name="twitter:description" content="Desarrollador Full Stack · Laravel · Spring Boot · Vue.js · Docker · Kubernetes · CDMX" />
+    <meta name="twitter:image" content="https://www.ivangonzalezg.com.mx/og-image.png" />
+    <meta name="twitter:image:alt" content="Iván González García — Desarrollador Full Stack" />
+
+    <!-- ── App / Theme ───────────────────────────────────────────────────────── -->
+    <meta name="theme-color" content="#24283b" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="application-name" content="Portafolio Iván González García" />
+
+    <!-- ════════════════════════════════════════════════════════════════════════
+         STRUCTURED DATA (JSON-LD)
+         Legible por Google, Bing, Perplexity, ChatGPT, Claude y todos los
+         motores de búsqueda generativos actuales.
+         ════════════════════════════════════════════════════════════════════════ -->
+
+    <!-- ── Person: quién soy, qué sé, dónde estoy ───────────────────────────── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://www.ivangonzalezg.com.mx/#person",
+      "name": "Iván González García",
+      "givenName": "Iván",
+      "familyName": "González García",
+      "alternateName": ["igonzalez", "Ivan Gonzalez Garcia"],
+      "jobTitle": "Full Stack Software Engineer",
+      "description": "Desarrollador Full Stack con 4+ años de experiencia construyendo sistemas empresariales, microservicios y aplicaciones web. Especialista en Laravel, Spring Boot, Vue.js, Angular, Docker y Kubernetes. Basado en Ciudad de México, abierto a trabajo remoto.",
+      "url": "https://www.ivangonzalezg.com.mx/",
+      "email": "gonzalezgarciaivandejesus@gmail.com",
+      "telephone": "+52-729-109-7554",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ciudad de México",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/gonzalezgivan2000",
+        "https://www.ivangonzalezg.com.mx/"
+      ],
+      "knowsAbout": [
+        "Laravel", "PHP", "Spring Boot", "Java", "Golang",
+        "Vue.js", "Angular", "React", "TypeScript", "JavaScript",
+        "Docker", "Kubernetes", "CI/CD", "DevOps", "Linux",
+        "PostgreSQL", "MySQL", "Oracle Database",
+        "Arquitectura de Microservicios", "Arquitectura Hexagonal",
+        "SCRUM", "Agile", "RESTful APIs", "Full Stack Development",
+        "TailwindCSS", "Vtex", "Shopify", "E-commerce",
+        "Desarrollo de Software Empresarial"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Full Stack Software Engineer",
+        "description": "Diseño e implementación de sistemas empresariales, microservicios y aplicaciones web usando tecnologías modernas de backend y frontend.",
+        "estimatedSalary": {
+          "@type": "MonetaryAmountDistribution",
+          "name": "Rango salarial desarrollador full stack México",
+          "currency": "MXN",
+          "duration": "P1M"
+        },
+        "occupationLocation": [
+          {
+            "@type": "City",
+            "name": "Ciudad de México",
+            "containedInPlace": {
+              "@type": "Country",
+              "name": "México"
+            }
+          }
+        ],
+        "skills": "Laravel, Spring Boot, Vue.js, Angular, React, TypeScript, Docker, Kubernetes, PostgreSQL, MySQL, Oracle DB, Golang, CI/CD, Microservicios, TailwindCSS"
+      },
+      "knowsLanguage": [
+        { "@type": "Language", "name": "Español", "alternateName": "es" },
+        { "@type": "Language", "name": "English", "alternateName": "en" }
+      ],
+      "workLocation": {
+        "@type": "VirtualLocation",
+        "description": "Trabajo remoto disponible. También disponible en modalidad híbrida en Ciudad de México."
+      }
+    }
+    </script>
+
+    <!-- ── WebSite: datos del sitio ──────────────────────────────────────────── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://www.ivangonzalezg.com.mx/#website",
+      "url": "https://www.ivangonzalezg.com.mx/",
+      "name": "Iván González García — Portafolio",
+      "description": "Portafolio profesional interactivo de Iván González García, Desarrollador Full Stack basado en Ciudad de México. Muestra experiencia laboral, proyectos, habilidades técnicas y certificaciones.",
+      "inLanguage": "es-MX",
+      "author": { "@id": "https://www.ivangonzalezg.com.mx/#person" },
+      "about": { "@id": "https://www.ivangonzalezg.com.mx/#person" },
+      "creator": { "@id": "https://www.ivangonzalezg.com.mx/#person" }
+    }
+    </script>
+
+    <!-- ── ProfilePage: señal explícita para motores generativos ─────────────── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "@id": "https://www.ivangonzalezg.com.mx/#profilepage",
+      "name": "Iván González García — Desarrollador Full Stack México",
+      "url": "https://www.ivangonzalezg.com.mx/",
+      "inLanguage": "es-MX",
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-05-13",
+      "mainEntity": { "@id": "https://www.ivangonzalezg.com.mx/#person" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["title", "meta[name='description']"]
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://www.ivangonzalezg.com.mx/"
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- ── ItemList: proyectos destacados — visible para AI crawlers ─────────── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Proyectos destacados de Iván González García",
+      "description": "Selección de proyectos de software desarrollados por Iván González García",
+      "author": { "@id": "https://www.ivangonzalezg.com.mx/#person" },
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "SIPF — Sistema Integral Penitenciario Federal",
+            "description": "Microservicios para el Sistema Integral Penitenciario Federal. Mejora de eficiencia del sistema en un 20% mediante arquitectura de microservicios.",
+            "applicationCategory": "GovernmentApplication",
+            "operatingSystem": "Linux",
+            "programmingLanguage": ["Spring Boot", "Angular", "Docker", "Kubernetes", "Oracle DB", "GitHub Actions"],
+            "author": { "@id": "https://www.ivangonzalezg.com.mx/#person" },
+            "datePublished": "2025"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Visa Electrónica — Secretaría de Relaciones Exteriores",
+            "description": "Sistema de visado electrónico desarrollado para la Secretaría de Relaciones Exteriores de México. Implementación de alcance internacional.",
+            "applicationCategory": "GovernmentApplication",
+            "programmingLanguage": ["Laravel", "Vue.js", "PostgreSQL", "TailwindCSS", "Quasar", "Figma"],
+            "author": { "@id": "https://www.ivangonzalezg.com.mx/#person" },
+            "datePublished": "2023"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Seller Center — Doto.com.mx",
+            "description": "Plataforma de gestión de vendedores para e-commerce. Desarrollo de panel administrativo y APIs de integración.",
+            "applicationCategory": "BusinessApplication",
+            "programmingLanguage": ["Laravel", "Vue.js", "Vtex", "MySQL"],
+            "author": { "@id": "https://www.ivangonzalezg.com.mx/#person" },
+            "datePublished": "2022"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- ── FAQPage — aparece en AI Overviews de Google y respuestas de IAs ──── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué tecnologías domina Iván González García?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Iván González García domina: Backend — Laravel, Spring Boot, Golang; Frontend — Vue.js, Angular, React, TailwindCSS; Bases de datos — PostgreSQL, MySQL, Oracle DB; DevOps — Docker, Kubernetes, CI/CD, Linux; E-commerce — Vtex, Shopify. Con más de 4 años de experiencia en desarrollo de sistemas empresariales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde trabaja Iván González García y está disponible de forma remota?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Iván González García está basado en Ciudad de México, México. Está disponible para trabajo completamente remoto, híbrido o presencial en CDMX. Puede ser contactado en gonzalezgarciaivandejesus@gmail.com."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuántos años de experiencia tiene Iván González García como desarrollador?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Iván González García tiene 4+ años de experiencia como Desarrollador Full Stack, trabajando en proyectos gubernamentales de alto impacto, plataformas de e-commerce y sistemas empresariales con arquitectura de microservicios."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué proyectos ha desarrollado Iván González García?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sus proyectos más destacados incluyen: el Sistema Integral Penitenciario Federal (SIPF) con microservicios en Spring Boot; el Portal de Visa Electrónica para la Secretaría de Relaciones Exteriores de México en Laravel y Vue.js; plataformas de e-commerce con Vtex para Doto.com.mx; y dashboards empresariales con SumApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo contratar o contactar a Iván González García para un proyecto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Iván González García puede ser contactado por correo electrónico en gonzalezgarciaivandejesus@gmail.com, por teléfono al +52 729-109-7554, o a través de LinkedIn en linkedin.com/in/gonzalezgivan2000. Está disponible para proyectos freelance, empleo full-time y consultorías técnicas."
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="app"></div>

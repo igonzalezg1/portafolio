@@ -179,6 +179,9 @@ const contacto  = computed(() => props.previewData as ContactoData)
         <!-- ── INICIO ─────────────────────────────────────────────────────── -->
         <template v-if="previewType === 'inicio'">
           <div class="pv-inicio">
+            <div v-if="inicio.imagen" class="pv-hero">
+              <img :src="inicio.imagen" :alt="inicio.nombre" class="pv-hero-img" />
+            </div>
             <div class="pv-rol-badge">full-stack developer</div>
             <h1 class="pv-nombre">{{ inicio.nombre }}</h1>
             <p class="pv-rol">{{ inicio.rol }}</p>
@@ -523,6 +526,17 @@ const contacto  = computed(() => props.previewData as ContactoData)
   color: #a9b1d6;
   line-height: 1.65;
   margin: 0 0 1rem;
+}
+
+/* Hero de inicio */
+.pv-hero {
+  margin: -20px -20px 18px -20px;
+  overflow: hidden;
+}
+.pv-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Inicio */
